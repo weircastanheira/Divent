@@ -8,23 +8,53 @@
 
 import UIKit
 
-class SearchViewController: UIViewController {
+class SearchViewController:UIViewController,UIPickerViewDataSource,UIPickerViewDelegate  {
 
+    
+    @IBOutlet weak var mileSliderValue: UILabel!
+    
+
+    @IBOutlet weak var pickerView: UIPickerView!
+    
+    
+    
+    @IBAction func mileSlider(_ sender: UISlider) {
+        mileSliderValue.text = String(Int(sender.value))
+    }
+        
+    
+    let pickerData = ["Any","Sports","Gaming","Hangout","Nightlife","Other"]
+
+ 
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+            return 1
+        }
+        
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+            return pickerData.count
+        }
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int)-> String?{
+            return pickerData[row]
+            
+        }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int){
+            
+        }
+    
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
+    
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
+
+
