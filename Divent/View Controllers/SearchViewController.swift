@@ -17,6 +17,22 @@ class SearchViewController:UIViewController,UIPickerViewDataSource,UIPickerViewD
     @IBOutlet weak var pickerView: UIPickerView!
     
     
+    @IBOutlet weak var activityText: UILabel!
+    
+    @IBOutlet weak var setButton: UIButton!
+    
+    @IBAction func changeButton(_ sender: UIButton) {
+        pickerView.isHidden = false
+        setButton.isHidden = false
+    }
+    
+    
+    @IBAction func setClicked(_ sender: UIButton) {
+        pickerView.isHidden = true
+        setButton.isHidden = true
+    }
+    
+    
     
     @IBAction func mileSlider(_ sender: UISlider) {
         mileSliderValue.text = String(Int(sender.value))
@@ -38,7 +54,7 @@ class SearchViewController:UIViewController,UIPickerViewDataSource,UIPickerViewD
             
         }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int){
-            
+          activityText.text = pickerData[row]
         }
     
     
@@ -47,6 +63,8 @@ class SearchViewController:UIViewController,UIPickerViewDataSource,UIPickerViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
+       
+        
 
         // Do any additional setup after loading the view.
     }
