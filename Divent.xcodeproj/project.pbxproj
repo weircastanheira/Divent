@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		499AB3F321B7289F00BAB38A /* d.png in Resources */ = {isa = PBXBuildFile; fileRef = 499AB3F221B7289F00BAB38A /* d.png */; };
+		49FA08F021B71EA100D8D210 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 49FA08EF21B71EA100D8D210 /* GoogleService-Info.plist */; };
+		58A81C6ED95F6FED9C3DBBD9 /* Pods_DiventUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78E0A8255AD938A3AED9ABDF /* Pods_DiventUITests.framework */; };
+		67EB36429C0BCC46C22C2542 /* Pods_Divent.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ADAA850EDA25F865DA43C82 /* Pods_Divent.framework */; };
 		BF6DDBB821A8A84F002A8F21 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6DDBB721A8A84F002A8F21 /* AppDelegate.swift */; };
 		BF6DDBBA21A8A84F002A8F21 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6DDBB921A8A84F002A8F21 /* ViewController.swift */; };
 		BF6DDBBD21A8A850002A8F21 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF6DDBBB21A8A850002A8F21 /* Main.storyboard */; };
@@ -16,7 +20,7 @@
 		BF6DDBD821A8A851002A8F21 /* DiventUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6DDBD721A8A851002A8F21 /* DiventUITests.swift */; };
 		BF6DDBEA21A8B44D002A8F21 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6DDBE921A8B44D002A8F21 /* SearchViewController.swift */; };
 		BF6DDBEC21A8B46C002A8F21 /* CreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6DDBEB21A8B46C002A8F21 /* CreateViewController.swift */; };
-		BFBB034321B4BC5F0011C3B4 /* d.png in Resources */ = {isa = PBXBuildFile; fileRef = BFBB034221B4BC5F0011C3B4 /* d.png */; };
+		C1827A9A3BF26A9D1FB2281B /* Pods_DiventTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBB3C9CE6F08923C0F8F683D /* Pods_DiventTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +41,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		180CFF04671B46821B0C817D /* Pods-Divent.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Divent.release.xcconfig"; path = "Pods/Target Support Files/Pods-Divent/Pods-Divent.release.xcconfig"; sourceTree = "<group>"; };
+		3ADAA850EDA25F865DA43C82 /* Pods_Divent.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Divent.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3BD4438F93026AA9DD22FF85 /* Pods-Divent.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Divent.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Divent/Pods-Divent.debug.xcconfig"; sourceTree = "<group>"; };
+		499AB3F221B7289F00BAB38A /* d.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = d.png; sourceTree = "<group>"; };
+		49FA08EF21B71EA100D8D210 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		78E0A8255AD938A3AED9ABDF /* Pods_DiventUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DiventUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A25E199D4E6B7518538A51A5 /* Pods-DiventUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DiventUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DiventUITests/Pods-DiventUITests.release.xcconfig"; sourceTree = "<group>"; };
+		AD57EFF08B12523B010CC9B4 /* Pods-DiventTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DiventTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DiventTests/Pods-DiventTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BF6DDBB421A8A84F002A8F21 /* Divent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Divent.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF6DDBB721A8A84F002A8F21 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF6DDBB921A8A84F002A8F21 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -52,7 +64,9 @@
 		BF6DDBD921A8A851002A8F21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF6DDBE921A8B44D002A8F21 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		BF6DDBEB21A8B46C002A8F21 /* CreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateViewController.swift; sourceTree = "<group>"; };
-		BFBB034221B4BC5F0011C3B4 /* d.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = d.png; path = ../../../../Downloads/d.png; sourceTree = "<group>"; };
+		BFC5EB762099B4ECF4635596 /* Pods-DiventUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DiventUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DiventUITests/Pods-DiventUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		DEC13407A69D155A7466008A /* Pods-DiventTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DiventTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DiventTests/Pods-DiventTests.release.xcconfig"; sourceTree = "<group>"; };
+		EBB3C9CE6F08923C0F8F683D /* Pods_DiventTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DiventTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67EB36429C0BCC46C22C2542 /* Pods_Divent.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1827A9A3BF26A9D1FB2281B /* Pods_DiventTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,12 +90,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58A81C6ED95F6FED9C3DBBD9 /* Pods_DiventUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B73C45151E34E72AF58C22B9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3ADAA850EDA25F865DA43C82 /* Pods_Divent.framework */,
+				EBB3C9CE6F08923C0F8F683D /* Pods_DiventTests.framework */,
+				78E0A8255AD938A3AED9ABDF /* Pods_DiventUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		BF6DDBAB21A8A84F002A8F21 = {
 			isa = PBXGroup;
 			children = (
@@ -87,6 +114,8 @@
 				BF6DDBCB21A8A851002A8F21 /* DiventTests */,
 				BF6DDBD621A8A851002A8F21 /* DiventUITests */,
 				BF6DDBB521A8A84F002A8F21 /* Products */,
+				DBCC6D46EF9C46413709D9EB /* Pods */,
+				B73C45151E34E72AF58C22B9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,13 +132,14 @@
 		BF6DDBB621A8A84F002A8F21 /* Divent */ = {
 			isa = PBXGroup;
 			children = (
-				BFBB034221B4BC5F0011C3B4 /* d.png */,
+				499AB3F221B7289F00BAB38A /* d.png */,
 				BF6DDBED21A8B4D0002A8F21 /* View Controllers */,
 				BF6DDBB721A8A84F002A8F21 /* AppDelegate.swift */,
 				BF6DDBBB21A8A850002A8F21 /* Main.storyboard */,
 				BF6DDBBE21A8A851002A8F21 /* Assets.xcassets */,
 				BF6DDBC021A8A851002A8F21 /* LaunchScreen.storyboard */,
 				BF6DDBC321A8A851002A8F21 /* Info.plist */,
+				49FA08EF21B71EA100D8D210 /* GoogleService-Info.plist */,
 			);
 			path = Divent;
 			sourceTree = "<group>";
@@ -142,6 +172,19 @@
 			path = "View Controllers";
 			sourceTree = "<group>";
 		};
+		DBCC6D46EF9C46413709D9EB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3BD4438F93026AA9DD22FF85 /* Pods-Divent.debug.xcconfig */,
+				180CFF04671B46821B0C817D /* Pods-Divent.release.xcconfig */,
+				AD57EFF08B12523B010CC9B4 /* Pods-DiventTests.debug.xcconfig */,
+				DEC13407A69D155A7466008A /* Pods-DiventTests.release.xcconfig */,
+				BFC5EB762099B4ECF4635596 /* Pods-DiventUITests.debug.xcconfig */,
+				A25E199D4E6B7518538A51A5 /* Pods-DiventUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -149,9 +192,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BF6DDBDC21A8A851002A8F21 /* Build configuration list for PBXNativeTarget "Divent" */;
 			buildPhases = (
+				16FCDB335047D9A3F5A0AB63 /* [CP] Check Pods Manifest.lock */,
 				BF6DDBB021A8A84F002A8F21 /* Sources */,
 				BF6DDBB121A8A84F002A8F21 /* Frameworks */,
 				BF6DDBB221A8A84F002A8F21 /* Resources */,
+				9CD4F8D1D75C8004DBD4F498 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -166,6 +211,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BF6DDBDF21A8A851002A8F21 /* Build configuration list for PBXNativeTarget "DiventTests" */;
 			buildPhases = (
+				F752379ECE0E1362329AEACC /* [CP] Check Pods Manifest.lock */,
 				BF6DDBC421A8A851002A8F21 /* Sources */,
 				BF6DDBC521A8A851002A8F21 /* Frameworks */,
 				BF6DDBC621A8A851002A8F21 /* Resources */,
@@ -184,6 +230,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BF6DDBE221A8A851002A8F21 /* Build configuration list for PBXNativeTarget "DiventUITests" */;
 			buildPhases = (
+				316848CB677198A6D19A7D44 /* [CP] Check Pods Manifest.lock */,
 				BF6DDBCF21A8A851002A8F21 /* Sources */,
 				BF6DDBD021A8A851002A8F21 /* Frameworks */,
 				BF6DDBD121A8A851002A8F21 /* Resources */,
@@ -246,8 +293,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BFBB034321B4BC5F0011C3B4 /* d.png in Resources */,
+				499AB3F321B7289F00BAB38A /* d.png in Resources */,
 				BF6DDBC221A8A851002A8F21 /* LaunchScreen.storyboard in Resources */,
+				49FA08F021B71EA100D8D210 /* GoogleService-Info.plist in Resources */,
 				BF6DDBBF21A8A851002A8F21 /* Assets.xcassets in Resources */,
 				BF6DDBBD21A8A850002A8F21 /* Main.storyboard in Resources */,
 			);
@@ -268,6 +316,85 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		16FCDB335047D9A3F5A0AB63 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Divent-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		316848CB677198A6D19A7D44 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DiventUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9CD4F8D1D75C8004DBD4F498 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Divent/Pods-Divent-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Divent/Pods-Divent-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F752379ECE0E1362329AEACC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DiventTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		BF6DDBB021A8A84F002A8F21 /* Sources */ = {
@@ -450,10 +577,12 @@
 		};
 		BF6DDBDD21A8A851002A8F21 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3BD4438F93026AA9DD22FF85 /* Pods-Divent.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Divent/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -461,16 +590,18 @@
 				PRODUCT_BUNDLE_IDENTIFIER = WeirCastanheira.Divent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		BF6DDBDE21A8A851002A8F21 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 180CFF04671B46821B0C817D /* Pods-Divent.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Divent/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -478,12 +609,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = WeirCastanheira.Divent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
 		BF6DDBE021A8A851002A8F21 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AD57EFF08B12523B010CC9B4 /* Pods-DiventTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -504,6 +636,7 @@
 		};
 		BF6DDBE121A8A851002A8F21 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DEC13407A69D155A7466008A /* Pods-DiventTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -524,6 +657,7 @@
 		};
 		BF6DDBE321A8A851002A8F21 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BFC5EB762099B4ECF4635596 /* Pods-DiventUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -543,6 +677,7 @@
 		};
 		BF6DDBE421A8A851002A8F21 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A25E199D4E6B7518538A51A5 /* Pods-DiventUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
