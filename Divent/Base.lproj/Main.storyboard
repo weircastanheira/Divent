@@ -41,6 +41,10 @@
                                     <segue destination="oog-iG-wFR" kind="show" id="b29-Vq-maN"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="d.png" translatesAutoresizingMaskIntoConstraints="NO" id="Zyx-Yn-QFn">
+                                <rect key="frame" x="100" y="100" width="174" height="174"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -324,8 +328,12 @@
             <point key="canvasLocation" x="989.60000000000002" y="26.53673163418291"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="d.png" width="256" height="256"/>
+    </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="b29-Vq-maN"/>
+        <segue reference="ORd-gi-aVB"/>
+        <segue reference="f6N-yt-R9h"/>
         <segue reference="ZUU-PN-ccp"/>
     </inferredMetricsTieBreakers>
 </document>

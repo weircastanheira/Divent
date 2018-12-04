@@ -16,6 +16,7 @@
 		BF6DDBD821A8A851002A8F21 /* DiventUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6DDBD721A8A851002A8F21 /* DiventUITests.swift */; };
 		BF6DDBEA21A8B44D002A8F21 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6DDBE921A8B44D002A8F21 /* SearchViewController.swift */; };
 		BF6DDBEC21A8B46C002A8F21 /* CreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6DDBEB21A8B46C002A8F21 /* CreateViewController.swift */; };
+		BFBB034321B4BC5F0011C3B4 /* d.png in Resources */ = {isa = PBXBuildFile; fileRef = BFBB034221B4BC5F0011C3B4 /* d.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		BF6DDBD921A8A851002A8F21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF6DDBE921A8B44D002A8F21 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		BF6DDBEB21A8B46C002A8F21 /* CreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateViewController.swift; sourceTree = "<group>"; };
+		BFBB034221B4BC5F0011C3B4 /* d.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = d.png; path = ../../../../Downloads/d.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 		BF6DDBB621A8A84F002A8F21 /* Divent */ = {
 			isa = PBXGroup;
 			children = (
+				BFBB034221B4BC5F0011C3B4 /* d.png */,
 				BF6DDBED21A8B4D0002A8F21 /* View Controllers */,
 				BF6DDBB721A8A84F002A8F21 /* AppDelegate.swift */,
 				BF6DDBBB21A8A850002A8F21 /* Main.storyboard */,
@@ -243,6 +246,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFBB034321B4BC5F0011C3B4 /* d.png in Resources */,
 				BF6DDBC221A8A851002A8F21 /* LaunchScreen.storyboard in Resources */,
 				BF6DDBBF21A8A851002A8F21 /* Assets.xcassets in Resources */,
 				BF6DDBBD21A8A850002A8F21 /* Main.storyboard in Resources */,
