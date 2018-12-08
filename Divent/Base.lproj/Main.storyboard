@@ -165,6 +165,7 @@
                     <navigationItem key="navigationItem" title="Title" id="uUO-4S-ag6"/>
                     <connections>
                         <outlet property="activityPickerTF" destination="xcS-nC-Hle" id="Kfr-so-5zx"/>
+                        <outlet property="activityTitle" destination="ibd-IW-458" id="PwR-59-3PE"/>
                         <outlet property="datePickerTF" destination="ulm-1s-70x" id="Idz-mK-o9S"/>
                         <outlet property="moreDetails" destination="8XD-CK-oOQ" id="fTV-nU-heG"/>
                     </connections>

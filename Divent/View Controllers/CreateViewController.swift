@@ -25,6 +25,8 @@ class CreateViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     
     @IBOutlet weak var moreDetails: UITextView!
     
+    @IBOutlet weak var activityTitle: UITextField!
+    
     let pickerData = ["Choose...","Sports","Gaming","Hangout","Nightlife","Other"]
     
     
@@ -49,7 +51,6 @@ class CreateViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(doneActivityClicked))
         toolbar.setItems([doneButton], animated: true)
         activityPickerTF.inputAccessoryView = toolbar
-        
         
     }
     
@@ -84,6 +85,8 @@ class CreateViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     @objc func hidePickers(){
         self.view.endEditing(true)
     }
+    
+    
 
     @IBAction func confirmClicked(_ sender: Any) {
         // Declare Alert message
@@ -113,7 +116,9 @@ class CreateViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         //if statement if every label is correct types etc / filled out
         print("Activity being confirmed")
         //change below to if critera met
-        if(1==1){
+        if(datePickerTF.hasText && activityTitle.hasText && moreDetails.hasText &&             activityPickerTF.text == "Sports" || activityPickerTF.text == "Gaming"
+            || activityPickerTF.text == "Hangout" || activityPickerTF.text == "Nightlife" || activityPickerTF.text == "Other"){
+            
             let dialogMessage = UIAlertController(title: "Activity Confirmed", message: "Your activity has been added", preferredStyle: .alert)
 
             // Create OK button with action handler
@@ -124,6 +129,7 @@ class CreateViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
             dialogMessage.addAction(ok)
 
             self.present(dialogMessage, animated: true, completion: nil)
+        
         }
             //if critera is unmet
         else{
