@@ -85,6 +85,12 @@ class CreateViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     @objc func hidePickers(){
         self.view.endEditing(true)
     }
+    @objc func resetValues(){
+        activityPickerTF.text = "Choose..."
+        datePickerTF.text = ""
+        moreDetails.text = "Details here (time, etc...)"
+        activityTitle.text = ""
+    }
     
     
 
@@ -129,7 +135,7 @@ class CreateViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
             dialogMessage.addAction(ok)
 
             self.present(dialogMessage, animated: true, completion: nil)
-        
+            resetValues()
         }
             //if critera is unmet
         else{
