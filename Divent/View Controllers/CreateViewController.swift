@@ -8,12 +8,15 @@
 
 import UIKit
 import Firebase
+import CoreLocation
+import MapKit
 
-class CreateViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+class CreateViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, CLLocationManagerDelegate {
+    
+    var locationManager: CLLocationManager!
     
     fileprivate var ref : DatabaseReference? // Firebase variable
 
-    
     @IBOutlet weak var datePickerTF: UITextField!
     let datePicker = UIDatePicker()
     
@@ -26,6 +29,9 @@ class CreateViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     @IBOutlet weak var moreDetails: UITextView!
     
     @IBOutlet weak var activityTitle: UITextField!
+    
+    @IBOutlet weak var locationTF: UITextField!
+ 
     
     let pickerData = ["Choose...","Sports","Gaming","Hangout","Nightlife","Other"]
     
@@ -44,6 +50,8 @@ class CreateViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         activityPickerTF.text = pickerData[row]
     }
     
+    
+    
     func createActivityPicker(){
         activityPickerTF.inputView = activityPicker
         let toolbar = UIToolbar()
@@ -53,6 +61,27 @@ class CreateViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         activityPickerTF.inputAccessoryView = toolbar
         
     }
+    
+    @IBAction func locationClicked(_ sender: Any) {
+//        let geocoder = CLGeocoder()
+//
+//        let locationString = "Grand Rapids"
+//
+//        geocoder.geocodeAddressString(locationString) { (placemarks, error) in
+//            if let error = error {
+//                print(error.localizedDescription)
+//            } else {
+//                if let location = placemarks?.first?.location {
+//                    let query = "?ll=\(location.coordinate.latitude),\(location.coordinate.longitude)"
+//                    let urlString = "http://maps.apple.com/".appending(query)
+//                    if let url = URL(string: urlString) {
+//                        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+//                    }
+//                }
+//            }
+//        }
+    }
+    
     
     func createDatePicker(){
         let thisYear = Calendar.current.component(.year, from: Date())
@@ -133,7 +162,6 @@ class CreateViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
             })
 
             dialogMessage.addAction(ok)
-
             self.present(dialogMessage, animated: true, completion: nil)
             resetValues()
         }
@@ -159,6 +187,11 @@ class CreateViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        locationManager = CLLocationManager()
+        self.locationManager.delegate = self;
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestAlwaysAuthorization()
+        locationManager.startUpdatingLocation()
         activityPicker.delegate = self
         createDatePicker()
         createActivityPicker()
@@ -166,10 +199,18 @@ class CreateViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         let detectTouch = UITapGestureRecognizer(target: self, action: #selector(self.self.hidePickers))
         self.view.addGestureRecognizer(detectTouch)
         
+
+        
 //        Firebase implementation
         self.ref = Database.database().reference()
         self.registerForFireBaseUpdates()
     }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let locValue:CLLocationCoordinate2D = manager.location!.coordinate
+        print("locations = \(locValue.latitude) \(locValue.longitude)")
+    }
+
     
 //    Necessary for Firebase process
     fileprivate func registerForFireBaseUpdates()
@@ -196,6 +237,8 @@ class CreateViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         })
         
     }
+
+
 
     
 }
