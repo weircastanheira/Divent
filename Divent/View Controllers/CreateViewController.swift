@@ -15,6 +15,8 @@ class CreateViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     
     var locationManager: CLLocationManager!
     
+    
+    
     fileprivate var ref : DatabaseReference? // Firebase variable
 
     @IBOutlet weak var datePickerTF: UITextField!
@@ -119,6 +121,19 @@ class CreateViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         datePickerTF.text = ""
         moreDetails.text = "Details here (time, etc...)"
         activityTitle.text = ""
+        locationTF.text = ""
+    }
+    
+    func toDictionary(vals: dataArray)->NSDictionary{
+        return[
+        
+            "activityPickerTF": NSString(string: vals.activityPickerTF),
+            "activityTitle": NSString(string: vals.activityTitle),
+            "locationTF": NSString(string: vals.locationTF),
+            "datePickerTF": NSString(string: vals.datePickerTF),
+            "moreDetails": NSString(string: vals.moreDetails)
+    ]
+        
     }
     
     
@@ -162,6 +177,9 @@ class CreateViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
             })
 
             dialogMessage.addAction(ok)
+            let entry = dataArray(activityPickerTF: activityPickerTF.text!, activityTitle: activityTitle.text!, locationTF: locationTF.text!, datePickerTF: datePickerTF.text!, moreDetails: moreDetails.text!)
+            let newChild = self.ref?.child("activity").childByAutoId()
+            newChild?.setValue(self.toDictionary(vals:entry))
             self.present(dialogMessage, animated: true, completion: nil)
             resetValues()
         }
@@ -187,6 +205,8 @@ class CreateViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.ref = Database.database().reference()
+        self.registerForFireBaseUpdates()
         locationManager = CLLocationManager()
         self.locationManager.delegate = self;
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -209,7 +229,24 @@ class CreateViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let locValue:CLLocationCoordinate2D = manager.location!.coordinate
         print("locations = \(locValue.latitude) \(locValue.longitude)")
+    
+        
+        geocode(latitude: -22.963451, longitude: -43.198242) { placemark, error in
+            guard let placemark = placemark, error == nil else { return }
+            
+//            print("address1:", placemark.thoroughfare ?? "")
+//            print("address2:", placemark.subThoroughfare ?? "")
+ //           print("city:",     placemark.locality ?? "")
+//            print("state:",    placemark.administrativeArea ?? "")
+//            print("zip code:", placemark.postalCode ?? "")
+//            print("country:",  placemark.country ?? "")
+        
     }
+    }
+    func geocode(latitude: Double, longitude: Double, completion: @escaping (CLPlacemark?, Error?) -> ())  {
+        CLGeocoder().reverseGeocodeLocation(CLLocation(latitude: latitude, longitude: longitude)) { completion($0?.first, $1) }
+    }
+
 
     
 //    Necessary for Firebase process
@@ -218,21 +255,22 @@ class CreateViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         self.ref!.child("activities").observe(.value, with: { snapshot in
             if let postDict = snapshot.value as? [String : AnyObject] {
                 //                TODO: Change this to actual project's values
-                /*
-                var tmpItems = [Conversion]()
+                
+                var tmpItems = [dataArray]()
                 for (_,val) in postDict.enumerated() {
                     let entry = val.1 as! Dictionary<String,AnyObject>
-                    let timestamp = entry["timestamp"] as! String?
-                    let origFromVal = entry["origFromVal"] as! Double?
-                    let origToVal = entry["origToVal"] as! Double?
-                    let origFromUnits = entry["origFromUnits"] as! String?
-                    let origToUnits = entry["origToUnits"] as! String?
-                    let origMode = entry["origMode"] as! String?
+                    let activityPickerTF = entry["activityPickerTF"] as! String?
+                    let activityTitle = entry["activityTitle"] as! String?
+                    let locationTF = entry["locationTF"] as! String?
+                    let datePickerTF = entry["datePickerTF"] as! String?
+                    let moreDetails = entry["moreDetails"] as! String?
                     
-                    tmpItems.append(Conversion(fromVal: origFromVal!, toVal: origToVal!, mode: CalculatorMode(rawValue: origMode!)!, fromUnits: origFromUnits!, toUnits: origToUnits!, timestamp: (timestamp?.dateFromISO8601)!))
+                    
+                    tmpItems.append(dataArray(activityPickerTF: activityPickerTF!, activityTitle: activityTitle!, locationTF: locationTF!, datePickerTF: datePickerTF!, moreDetails: moreDetails!))
+ 
                 }
-                */
-//                self.entries = tmpItems
+                
+      //          self.entries = tmpItems
             }
         })
         

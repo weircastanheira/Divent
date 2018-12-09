@@ -20,6 +20,8 @@
 		BF6DDBD821A8A851002A8F21 /* DiventUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6DDBD721A8A851002A8F21 /* DiventUITests.swift */; };
 		BF6DDBEA21A8B44D002A8F21 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6DDBE921A8B44D002A8F21 /* SearchViewController.swift */; };
 		BF6DDBEC21A8B46C002A8F21 /* CreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6DDBEB21A8B46C002A8F21 /* CreateViewController.swift */; };
+		BFEA8B1821BCA68A008F7003 /* dataArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEA8B1721BCA68A008F7003 /* dataArray.swift */; };
+		BFEA8B2621BCC775008F7003 /* ActivityTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEA8B2521BCC775008F7003 /* ActivityTableViewController.swift */; };
 		C1827A9A3BF26A9D1FB2281B /* Pods_DiventTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBB3C9CE6F08923C0F8F683D /* Pods_DiventTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +67,8 @@
 		BF6DDBE921A8B44D002A8F21 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		BF6DDBEB21A8B46C002A8F21 /* CreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateViewController.swift; sourceTree = "<group>"; };
 		BFC5EB762099B4ECF4635596 /* Pods-DiventUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DiventUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DiventUITests/Pods-DiventUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		BFEA8B1721BCA68A008F7003 /* dataArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = dataArray.swift; path = /Users/macosuser/Documents/DiventProject/Divent/dataArray.swift; sourceTree = "<absolute>"; };
+		BFEA8B2521BCC775008F7003 /* ActivityTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTableViewController.swift; sourceTree = "<group>"; };
 		DEC13407A69D155A7466008A /* Pods-DiventTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DiventTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DiventTests/Pods-DiventTests.release.xcconfig"; sourceTree = "<group>"; };
 		EBB3C9CE6F08923C0F8F683D /* Pods_DiventTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DiventTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -135,6 +139,7 @@
 				499AB3F221B7289F00BAB38A /* d.png */,
 				BF6DDBED21A8B4D0002A8F21 /* View Controllers */,
 				BF6DDBB721A8A84F002A8F21 /* AppDelegate.swift */,
+				BFEA8B1721BCA68A008F7003 /* dataArray.swift */,
 				BF6DDBBB21A8A850002A8F21 /* Main.storyboard */,
 				BF6DDBBE21A8A851002A8F21 /* Assets.xcassets */,
 				BF6DDBC021A8A851002A8F21 /* LaunchScreen.storyboard */,
@@ -168,6 +173,7 @@
 				BF6DDBB921A8A84F002A8F21 /* ViewController.swift */,
 				BF6DDBEB21A8B46C002A8F21 /* CreateViewController.swift */,
 				BF6DDBE921A8B44D002A8F21 /* SearchViewController.swift */,
+				BFEA8B2521BCC775008F7003 /* ActivityTableViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -409,7 +415,9 @@
 			files = (
 				BF6DDBEC21A8B46C002A8F21 /* CreateViewController.swift in Sources */,
 				BF6DDBEA21A8B44D002A8F21 /* SearchViewController.swift in Sources */,
+				BFEA8B2621BCC775008F7003 /* ActivityTableViewController.swift in Sources */,
 				BF6DDBBA21A8A84F002A8F21 /* ViewController.swift in Sources */,
+				BFEA8B1821BCA68A008F7003 /* dataArray.swift in Sources */,
 				BF6DDBB821A8A84F002A8F21 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
