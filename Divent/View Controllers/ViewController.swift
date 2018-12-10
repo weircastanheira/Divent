@@ -13,7 +13,7 @@ import Firebase
 class ViewController: UIViewController {
     
     @IBAction func shareClicked(_ sender: Any) {
-        let content:LinkShareContent = LinkShareContent.init(url: URL.init(string: "https://www.google.com") ?? URL.init(fileURLWithPath: "https://www.google.com"), quote: "I'm using the Divent App! You should too!")
+        let content:LinkShareContent = LinkShareContent.init(url: URL.init(string: "http://www.google.com") ?? URL.init(fileURLWithPath: "http://www.google.com"), quote: "I'm using the Divent App! You should too!")
         
         let shareDialog = ShareDialog(content: content)
         shareDialog.mode = .native
