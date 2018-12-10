@@ -7,7 +7,25 @@
 		<key>Divent.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>10</integer>
+			<integer>15</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>BF6DDBB321A8A84F002A8F21</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BF6DDBC721A8A851002A8F21</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BF6DDBD221A8A851002A8F21</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

@@ -7,10 +7,8 @@
 //
 
 import UIKit
-
-protocol searchDelegation{
-    func settingsChanged(activityText: String, mileSliderValue: String)
-}
+import CoreLocation
+import MapKit
 
 class SearchViewController:UIViewController,UIPickerViewDataSource,UIPickerViewDelegate  {
 
@@ -22,13 +20,11 @@ class SearchViewController:UIViewController,UIPickerViewDataSource,UIPickerViewD
     @IBOutlet weak var activityPickerTF: UITextField!
     let activityPicker = UIPickerView()
     
-    
-    var delegate: SearchViewController?
+    var locationManager: CLLocationManager!
     var selection: String = "Any"
-    
-    @IBAction func mileSlider(_ sender: UISlider) {
-        mileSliderValue.text = String(Int(sender.value))
-    }
+    var mileValue: String?
+    var activityTypeValue: String?
+
     
     
     let pickerData = ["Any","Sports","Gaming","Hangout","Nightlife","Other"]
@@ -48,16 +44,26 @@ class SearchViewController:UIViewController,UIPickerViewDataSource,UIPickerViewD
         activityPickerTF.text = pickerData[row]
     }
 
-
-    
+    @IBAction func backClicked(_ sender: Any) {
+        //none
+        
+    }
     
     
     @IBAction func beginSearchClicked(_ sender: Any) {
-//        delegate?.settingsChanged(activityText: activityText!.text!, mileSliderValue: mileSliderValue!.text!)
-//
-//        _ = self.navigationController?.popViewController(animated: true)
+        self.activityTypeValue = activityPickerTF.text
+        performSegue(withIdentifier: "search", sender: self)
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let vc = segue.destination as? ActivityTableViewController
+        vc?.activityTypeData = self.activityTypeValue!
+    }
     func createActivityPicker(){
         activityPickerTF.inputView = activityPicker
         let toolbar = UIToolbar()
@@ -74,8 +80,6 @@ class SearchViewController:UIViewController,UIPickerViewDataSource,UIPickerViewD
         self.view.endEditing(true)
     }
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         activityPicker.delegate = self
@@ -85,13 +89,7 @@ class SearchViewController:UIViewController,UIPickerViewDataSource,UIPickerViewD
         
         self.view.addGestureRecognizer(detectTouch)
 
-        // Do any additional setup after loading the view.
     }
-    
-    
-
-
-
 }
 
 

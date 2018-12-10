@@ -8,10 +8,34 @@
 
 import UIKit
 import Firebase
+import CoreLocation
+import MapKit
+
 
 
 class HeadlineViewCell: UITableViewCell{
 
+    @IBAction func lookupClicked(_ sender: Any) {
+        
+        let geocoder = CLGeocoder()
+        
+        geocoder.geocodeAddressString(label3.text!) { (placemarks, error) in
+            
+            if error != nil {
+            } else if let placemarks = placemarks {
+                
+                if (placemarks.first?.location?.coordinate) != nil {
+                 //   print(placemarks.first?.location?.coordinate)
+ 
+                    let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: (placemarks.first?.location?.coordinate)!, addressDictionary:nil))
+                    mapItem.name = self.label3.text
+                    mapItem.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving])
+                }
+            }
+        }
+
+    }
+    
     
      var entries : [dataArray] = []
     
@@ -37,10 +61,10 @@ class HeadlineViewCell: UITableViewCell{
 
 class ActivityTableViewController: UITableViewController{
     
+    var activityTypeData = ""
     
     let activityData = Database.database().reference().child("activities")
     var entries : [dataArray] = []
- //   let Activites = "Activities"
     var ref:DatabaseReference!
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -64,37 +88,43 @@ class ActivityTableViewController: UITableViewController{
         cell.label3?.text = test.locationTF
         cell.label4?.text = test.datePickerTF
         cell.label5?.text = test.moreDetails
+ //       cell.contentView.backgroundColor = UIColor.blue
 
-        print("cell data")
-        print(test.activityPickerTF)
-        print(cell.label1?.text)
-        print(cell.label2?.text)
-        print(cell.label3?.text)
-        print(cell.label4?.text)
-        print(cell.label4?.text)
-        print(test.activityPickerTF)
-        print(test.activityTitle)
-        print(test.locationTF)
-        print(test.datePickerTF)
-        print(test.moreDetails)
-
-        print(cell)
+        
+        if(test.activityPickerTF == activityTypeData || activityTypeData == "Any"){
+            //do nothing
+        }
+        else{
+            //remove cell from view
+            entries.remove(at: indexPath.row)
+            self.tableView.reloadData()
+        }
+                
+        
+            
         
         return cell
 
     }
     
+    @IBAction func backClicked(_ sender: Any) {
+        //nothing
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-//   self.tableView.register(HeadlineViewCell.classForKeyedArchiver(), forCellReuseIdentifier: "Cell")
+        
+
+        
+        self.tableView.backgroundColor = UIColor.blue
+
         self.tableView.delegate = self
         self.tableView.dataSource = self
     
-
-
  
         LoadCalls()
-    //    self.tableView.reloadData()
+
     }
     
     func LoadCalls() {
@@ -111,16 +141,11 @@ class ActivityTableViewController: UITableViewController{
             let locationText = results?["locationTF"]
             let datePickerText = results?["datePickerTF"]
             let moreDetailsText = results?["moreDetails"]
-//                print(activity)
-//                print(activityTitleText)
-//                print(locationText)
-//                print(datePickerText)
-//                print(moreDetailsText)
+
 
                 
             let myCalls = dataArray(activityPickerTF: (activity as! String?)!, activityTitle: (activityTitleText as! String?)!, locationTF: (locationText as! String?)!, datePickerTF: (datePickerText as! String?)!, moreDetails: (moreDetailsText as! String?)!)
-                
-         //       print(myCalls)
+
                 
             self.entries.append(myCalls)
             self.tableView.reloadData()

@@ -11,11 +11,9 @@ import Firebase
 import CoreLocation
 import MapKit
 
-class CreateViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, CLLocationManagerDelegate {
+class CreateViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate{
     
-    var locationManager: CLLocationManager!
-    
-    
+
     
     fileprivate var ref : DatabaseReference? // Firebase variable
 
@@ -65,25 +63,8 @@ class CreateViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     }
     
     @IBAction func locationClicked(_ sender: Any) {
-//        let geocoder = CLGeocoder()
-//
-//        let locationString = "Grand Rapids"
-//
-//        geocoder.geocodeAddressString(locationString) { (placemarks, error) in
-//            if let error = error {
-//                print(error.localizedDescription)
-//            } else {
-//                if let location = placemarks?.first?.location {
-//                    let query = "?ll=\(location.coordinate.latitude),\(location.coordinate.longitude)"
-//                    let urlString = "http://maps.apple.com/".appending(query)
-//                    if let url = URL(string: urlString) {
-//                        UIApplication.shared.open(url, options: [:], completionHandler: nil)
-//                    }
-//                }
-//            }
-//        }
+        
     }
-    
     
     func createDatePicker(){
         let thisYear = Calendar.current.component(.year, from: Date())
@@ -139,39 +120,38 @@ class CreateViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     
 
     @IBAction func confirmClicked(_ sender: Any) {
-        // Declare Alert message
+       
         let dialogMessage = UIAlertController(title: "Confirm", message: "Create this activity?", preferredStyle: .alert)
         
-        // Create OK button with action handler
+       
         let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
             print("Ok button tapped")
-            self.confirmRecord() //firebase here?
+            self.confirmRecord()
         })
         
-        // Create Cancel button with action handlder
+ 
         let cancel = UIAlertAction(title: "Cancel", style: .cancel) { (action) -> Void in
             print("Cancel button tapped")
         }
         
-        //Add OK and Cancel button to dialog message
         dialogMessage.addAction(ok)
         dialogMessage.addAction(cancel)
         
-        // Present dialog message to user
+       
         self.present(dialogMessage, animated: true, completion: nil)
     }
     
     func confirmRecord()
     {
-        //if statement if every label is correct types etc / filled out
+
         print("Activity being confirmed")
-        //change below to if critera met
-        if(datePickerTF.hasText && activityTitle.hasText && moreDetails.hasText &&             activityPickerTF.text == "Sports" || activityPickerTF.text == "Gaming"
+      
+        if(datePickerTF.hasText && activityTitle.hasText && moreDetails.hasText && activityPickerTF.text == "Sports" || activityPickerTF.text == "Gaming"
             || activityPickerTF.text == "Hangout" || activityPickerTF.text == "Nightlife" || activityPickerTF.text == "Other"){
             
             let dialogMessage = UIAlertController(title: "Activity Confirmed", message: "Your activity has been added", preferredStyle: .alert)
 
-            // Create OK button with action handler
+         
             let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
                 print("Ok button tapped")
             })
@@ -183,11 +163,11 @@ class CreateViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
             self.present(dialogMessage, animated: true, completion: nil)
             resetValues()
         }
-            //if critera is unmet
+         
         else{
             let dialogMessage = UIAlertController(title: "Activity Denied", message: "Please check that all forms are filled correctly", preferredStyle: .alert)
             
-            // Create OK button with action handler
+            
             let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
                 print("Ok button tapped")
             })
@@ -197,8 +177,7 @@ class CreateViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
             self.present(dialogMessage, animated: true, completion: nil)
             
         }
-        
-        // possibly change this to the firebase function
+
         
     }
     
@@ -207,11 +186,6 @@ class CreateViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         super.viewDidLoad()
         self.ref = Database.database().reference()
         self.registerForFireBaseUpdates()
-        locationManager = CLLocationManager()
-        self.locationManager.delegate = self;
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.requestAlwaysAuthorization()
-        locationManager.startUpdatingLocation()
         activityPicker.delegate = self
         createDatePicker()
         createActivityPicker()
@@ -226,29 +200,7 @@ class CreateViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         self.registerForFireBaseUpdates()
     }
     
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let locValue:CLLocationCoordinate2D = manager.location!.coordinate
-        print("locations = \(locValue.latitude) \(locValue.longitude)")
-    
-        
-        geocode(latitude: -22.963451, longitude: -43.198242) { placemark, error in
-            guard let placemark = placemark, error == nil else { return }
-            
-//            print("address1:", placemark.thoroughfare ?? "")
-//            print("address2:", placemark.subThoroughfare ?? "")
- //           print("city:",     placemark.locality ?? "")
-//            print("state:",    placemark.administrativeArea ?? "")
-//            print("zip code:", placemark.postalCode ?? "")
-//            print("country:",  placemark.country ?? "")
-        
-    }
-    }
-    func geocode(latitude: Double, longitude: Double, completion: @escaping (CLPlacemark?, Error?) -> ())  {
-        CLGeocoder().reverseGeocodeLocation(CLLocation(latitude: latitude, longitude: longitude)) { completion($0?.first, $1) }
-    }
 
-
-    
 //    Necessary for Firebase process
     fileprivate func registerForFireBaseUpdates()
     {
@@ -269,8 +221,6 @@ class CreateViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
                     tmpItems.append(dataArray(activityPickerTF: activityPickerTF!, activityTitle: activityTitle!, locationTF: locationTF!, datePickerTF: datePickerTF!, moreDetails: moreDetails!))
  
                 }
-                
-      //          self.entries = tmpItems
             }
         })
         
