@@ -1,0 +1,6 @@
+framework module Pods_DiventUITests {
+  umbrella header "Pods-DiventUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
