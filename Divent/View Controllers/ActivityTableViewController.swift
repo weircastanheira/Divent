@@ -55,8 +55,6 @@ class HeadlineViewCell: UITableViewCell{
     @IBOutlet weak var label5: UILabel!
     
     
-    
-    
 }
 
 class ActivityTableViewController: UITableViewController{
@@ -103,6 +101,7 @@ class ActivityTableViewController: UITableViewController{
         return cell
 
     }
+
     
     @IBAction func backClicked(_ sender: Any) {
         //nothing
