@@ -10,7 +10,7 @@ import UIKit
 import FacebookShare
 import Firebase
 
-class ViewController: UIViewController {
+class ViewController: DiventViewController {
     
     @IBAction func shareClicked(_ sender: Any) {
         let content:LinkShareContent = LinkShareContent.init(url: URL.init(string: "http://www.google.com") ?? URL.init(fileURLWithPath: "http://www.google.com"), quote: "I'm using the Divent App! You should too!")
@@ -34,6 +34,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        UIApplication.shared.keyWindow?.windowLevel = UIWindow.Level.normal
         Analytics.logEvent("Data", parameters: nil)
         // Do any additional setup after loading the view, typically from a nib.
     }

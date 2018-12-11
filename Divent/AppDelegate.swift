@@ -10,6 +10,12 @@
 import UIKit
 import Firebase
 
+let BACKGROUND_COLOR = UIColor.init(red:0.000,green:0.3373, blue:0.2078, alpha:1.000)
+//blueish
+
+let FOREGROUND_COLOR = UIColor.init(red:0.937,green:0.820, blue:0.576, alpha:1.0)
+//tanish
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -17,6 +23,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        
+
+      let navAppearance = UINavigationBar.appearance()
+        navAppearance.barTintColor = BACKGROUND_COLOR
+        navAppearance.tintColor = FOREGROUND_COLOR
+        navAppearance.isTranslucent = false
+        navAppearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
+        
+        
+        
         FirebaseApp.configure()
         // Override point for customization after application launch.
         return true

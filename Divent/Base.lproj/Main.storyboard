@@ -18,43 +18,64 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="910-aN-KHd">
-                                <rect key="frame" x="241" y="318" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Create"/>
-                                <connections>
-                                    <segue destination="3jO-sU-qsE" kind="show" id="Qpy-zN-xMc"/>
-                                </connections>
-                            </button>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="grb-0t-RQd">
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="grb-0t-RQd">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Divent" id="Uc2-Gq-HxJ"/>
                                 </items>
                             </navigationBar>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KhI-x7-PsM">
-                                <rect key="frame" x="87" y="322" width="48" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Search"/>
-                                <connections>
-                                    <segue destination="oog-iG-wFR" kind="show" id="b29-Vq-maN"/>
-                                </connections>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="d.png" translatesAutoresizingMaskIntoConstraints="NO" id="Zyx-Yn-QFn">
-                                <rect key="frame" x="100" y="100" width="174" height="174"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="d.png" translatesAutoresizingMaskIntoConstraints="NO" id="Zyx-Yn-QFn">
+                                <rect key="frame" x="100" y="100" width="175" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="yUR-Jy-i3x"/>
+                                </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ic-IC-kRL">
-                                <rect key="frame" x="167" y="617" width="40" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ic-IC-kRL" customClass="DiventButton" customModule="Divent" customModuleProvider="target">
+                                <rect key="frame" x="74" y="625" width="227" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="tOJ-qZ-es8"/>
+                                </constraints>
                                 <state key="normal" title="Share"/>
                                 <connections>
                                     <action selector="shareClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4n2-zw-Sb4"/>
                                 </connections>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="ZO1-0f-2dw">
+                                <rect key="frame" x="94" y="344" width="187" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KhI-x7-PsM" customClass="DiventButton" customModule="Divent" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="68.5" height="30"/>
+                                        <state key="normal" title="Search"/>
+                                        <connections>
+                                            <segue destination="oog-iG-wFR" kind="show" id="b29-Vq-maN"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="910-aN-KHd" customClass="DiventButton" customModule="Divent" customModuleProvider="target">
+                                        <rect key="frame" x="118.5" y="0.0" width="68.5" height="30"/>
+                                        <state key="normal" title="Create"/>
+                                        <connections>
+                                            <segue destination="3jO-sU-qsE" kind="show" id="Qpy-zN-xMc"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ZO1-0f-2dw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="94" id="BhQ-5u-4le"/>
+                            <constraint firstAttribute="bottom" secondItem="7ic-IC-kRL" secondAttribute="bottom" constant="20" symbolic="YES" id="E4U-tC-yHm"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="910-aN-KHd" secondAttribute="trailing" constant="94" id="Iol-0a-3Yi"/>
+                            <constraint firstItem="grb-0t-RQd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="JQ1-9W-RCX"/>
+                            <constraint firstItem="Zyx-Yn-QFn" firstAttribute="centerX" secondItem="grb-0t-RQd" secondAttribute="centerX" id="K6Y-2b-rB2"/>
+                            <constraint firstAttribute="trailing" secondItem="grb-0t-RQd" secondAttribute="trailing" id="OOA-Or-lPg"/>
+                            <constraint firstItem="grb-0t-RQd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="UgB-ip-ds4"/>
+                            <constraint firstItem="Zyx-Yn-QFn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="XDE-o7-bZ0"/>
+                            <constraint firstItem="ZO1-0f-2dw" firstAttribute="top" secondItem="Zyx-Yn-QFn" secondAttribute="bottom" constant="44" id="dB1-wc-Yzi"/>
+                            <constraint firstItem="7ic-IC-kRL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="74" id="hSv-2e-4g1"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Zyx-Yn-QFn" secondAttribute="trailing" constant="100" id="jhY-1Y-mSx"/>
+                            <constraint firstItem="Zyx-Yn-QFn" firstAttribute="top" secondItem="grb-0t-RQd" secondAttribute="bottom" constant="36" id="y82-xz-yfP"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7ic-IC-kRL" secondAttribute="trailing" constant="74" id="zwU-Mh-YIw"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
@@ -70,9 +91,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fa7-DL-Vto">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fa7-DL-Vto">
+                                <rect key="frame" x="0.0" y="20" width="375" height="46"/>
                                 <items>
                                     <navigationItem title="Create Activity" id="UGD-D9-fd9">
                                         <barButtonItem key="leftBarButtonItem" title="Back" id="4Lp-Mj-nuf">
@@ -83,108 +103,150 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title of Activity:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3OM-NB-cLr">
-                                <rect key="frame" x="124" y="144" width="119" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter title here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ibd-IW-458">
-                                <rect key="frame" x="44" y="173" width="298" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <accessibility key="accessibilityConfiguration" hint="sdfg">
-                                    <bool key="isElement" value="YES"/>
-                                </accessibility>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="foh-iU-QvK">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="foh-iU-QvK">
                                 <rect key="frame" x="114" y="335" width="0.0" height="0.0"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZVQ-KY-7BT">
-                                <rect key="frame" x="163" y="261" width="41" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Additional Details:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PHp-Tc-4Rx">
-                                <rect key="frame" x="118" y="320" width="138" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1lW-e8-oek">
-                                <rect key="frame" x="90" y="603" width="55" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Confirm"/>
-                                <connections>
-                                    <action selector="confirmClicked:" destination="3jO-sU-qsE" eventType="touchUpInside" id="c0x-wu-jmC"/>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="ya3-ix-n2d"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tzf-tM-Rl4">
-                                <rect key="frame" x="222" y="603" width="48" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Cancel"/>
-                                <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="oRa-xj-wti"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Type of Activity:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qBL-L5-v7P">
-                                <rect key="frame" x="121" y="77" width="124" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Date here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ulm-1s-70x">
-                                <rect key="frame" x="44" y="282" width="298" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Choose..." borderStyle="roundedRect" placeholder="Activity type here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xcS-nC-Hle">
-                                <rect key="frame" x="44" y="106" width="298" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Location here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2BR-BH-Eqh">
-                                <rect key="frame" x="44" y="230" width="298" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="locationClicked:" destination="3jO-sU-qsE" eventType="editingDidBegin" id="vEs-zE-hmC"/>
-                                </connections>
-                            </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Details here (time, etc..)" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="8XD-CK-oOQ">
-                                <rect key="frame" x="50" y="358" width="287" height="79"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="HUM-5D-xr0">
+                                <rect key="frame" x="44" y="77" width="287" height="250"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type of Activity:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qBL-L5-v7P" customClass="DiventLabel" customModule="Divent" customModuleProvider="target">
+                                        <rect key="frame" x="82" y="0.0" width="123.5" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Choose..." borderStyle="roundedRect" placeholder="Activity type here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xcS-nC-Hle">
+                                        <rect key="frame" x="43.5" y="28" width="200" height="24.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="Vdo-WV-qR3"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title of Activity:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3OM-NB-cLr" customClass="DiventLabel" customModule="Divent" customModuleProvider="target">
+                                        <rect key="frame" x="84" y="56.5" width="119" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter title here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ibd-IW-458">
+                                        <rect key="frame" x="43.5" y="84.5" width="200" height="24.5"/>
+                                        <accessibility key="accessibilityConfiguration" hint="sdfg">
+                                            <bool key="isElement" value="YES"/>
+                                        </accessibility>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="134.5" id="ETn-6C-tfi"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="tEx-OY-c3V"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location Address:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lzv-Jb-bxq" customClass="DiventLabel" customModule="Divent" customModuleProvider="target">
+                                        <rect key="frame" x="75" y="113" width="137.5" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Location here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2BR-BH-Eqh">
+                                        <rect key="frame" x="43.5" y="141" width="200" height="24.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="ByN-H8-MT9"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="134.5" id="DjD-tK-LXr"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="locationClicked:" destination="3jO-sU-qsE" eventType="editingDidBegin" id="vEs-zE-hmC"/>
+                                        </connections>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZVQ-KY-7BT" customClass="DiventLabel" customModule="Divent" customModuleProvider="target">
+                                        <rect key="frame" x="123" y="169.5" width="41" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Date here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ulm-1s-70x">
+                                        <rect key="frame" x="43.5" y="197.5" width="200" height="24.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="134.5" id="FhP-X8-xEv"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="Lwz-rd-sFL"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Additional Details:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PHp-Tc-4Rx" customClass="DiventLabel" customModule="Divent" customModuleProvider="target">
+                                        <rect key="frame" x="75" y="226" width="137.5" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="d1r-8w-qCt"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="imc-oJ-cBQ">
+                                <rect key="frame" x="83" y="595.5" width="200" height="35.5"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1lW-e8-oek" customClass="DiventButton" customModule="Divent" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="75" height="35.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35.5" id="fDL-aV-ZWf"/>
+                                        </constraints>
+                                        <state key="normal" title="Confirm"/>
+                                        <connections>
+                                            <action selector="confirmClicked:" destination="3jO-sU-qsE" eventType="touchUpInside" id="c0x-wu-jmC"/>
+                                            <segue destination="BYZ-38-t0r" kind="show" id="ya3-ix-n2d"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tzf-tM-Rl4" customClass="DiventButton" customModule="Divent" customModuleProvider="target">
+                                        <rect key="frame" x="125" y="0.0" width="75" height="35.5"/>
+                                        <state key="normal" title="Cancel"/>
+                                        <connections>
+                                            <segue destination="BYZ-38-t0r" kind="show" id="oRa-xj-wti"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="Ikf-iW-mh0"/>
+                                </constraints>
+                            </stackView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="8XD-CK-oOQ">
+                                <rect key="frame" x="44" y="343" width="287" height="75"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="iEo-fa-2Db"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Location Address:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lzv-Jb-bxq">
-                                <rect key="frame" x="114" y="211" width="138" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="8XD-CK-oOQ" firstAttribute="leading" secondItem="WDb-AH-MIa" secondAttribute="leading" constant="44" id="6nD-xg-5rx"/>
+                            <constraint firstItem="WDb-AH-MIa" firstAttribute="trailing" secondItem="HUM-5D-xr0" secondAttribute="trailing" constant="44" id="Dq1-ib-ZVb"/>
+                            <constraint firstItem="HUM-5D-xr0" firstAttribute="top" secondItem="fa7-DL-Vto" secondAttribute="bottom" constant="11" id="Eg9-Y8-L8U"/>
+                            <constraint firstItem="WDb-AH-MIa" firstAttribute="trailing" secondItem="8XD-CK-oOQ" secondAttribute="trailing" constant="44" id="Fda-2f-7dH"/>
+                            <constraint firstItem="HUM-5D-xr0" firstAttribute="leading" secondItem="WDb-AH-MIa" secondAttribute="leading" constant="44" id="MOn-V5-asT"/>
+                            <constraint firstItem="imc-oJ-cBQ" firstAttribute="leading" secondItem="WDb-AH-MIa" secondAttribute="leading" constant="83" id="QDn-wF-1pq"/>
+                            <constraint firstItem="fa7-DL-Vto" firstAttribute="top" secondItem="WDb-AH-MIa" secondAttribute="top" id="SlU-CC-H67"/>
+                            <constraint firstItem="8XD-CK-oOQ" firstAttribute="top" secondItem="HUM-5D-xr0" secondAttribute="bottom" constant="16" id="TPf-Ip-s80"/>
+                            <constraint firstItem="fa7-DL-Vto" firstAttribute="centerX" secondItem="HUM-5D-xr0" secondAttribute="centerX" id="d6A-k4-L8o"/>
+                            <constraint firstItem="fa7-DL-Vto" firstAttribute="leading" secondItem="Dk7-Ra-blf" secondAttribute="leading" id="dCS-wp-gTC"/>
+                            <constraint firstItem="WDb-AH-MIa" firstAttribute="bottom" secondItem="imc-oJ-cBQ" secondAttribute="bottom" constant="36" id="eFO-Jb-56y"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="foh-iU-QvK" secondAttribute="trailing" constant="20" symbolic="YES" id="fe1-PD-Hwn"/>
+                            <constraint firstAttribute="bottom" secondItem="foh-iU-QvK" secondAttribute="bottom" constant="332" id="iHT-4C-IZE"/>
+                            <constraint firstItem="imc-oJ-cBQ" firstAttribute="top" secondItem="8XD-CK-oOQ" secondAttribute="bottom" constant="177.5" id="lQb-QA-Hve"/>
+                            <constraint firstItem="foh-iU-QvK" firstAttribute="leading" secondItem="Dk7-Ra-blf" secondAttribute="leadingMargin" constant="98" id="pTv-qH-44J"/>
+                            <constraint firstItem="WDb-AH-MIa" firstAttribute="trailing" secondItem="imc-oJ-cBQ" secondAttribute="trailing" constant="92" id="zqJ-qW-ofw"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="WDb-AH-MIa"/>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="uUO-4S-ag6"/>
@@ -198,13 +260,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qcV-20-N27" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="159" y="770"/>
+            <point key="canvasLocation" x="157.59999999999999" y="769.56521739130437"/>
         </scene>
         <!--Activity Table View Controller-->
         <scene sceneID="nqw-Ab-JEa">
             <objects>
                 <tableViewController id="KnM-Bl-EEG" customClass="ActivityTableViewController" customModule="Divent" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="329" sectionHeaderHeight="28" sectionFooterHeight="28" id="p4g-Dt-W8d">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="359" sectionHeaderHeight="28" sectionFooterHeight="28" id="p4g-Dt-W8d">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -227,106 +289,130 @@
                             </items>
                         </navigationBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="UITableViewCell" rowHeight="329" id="dMo-y1-xS9" customClass="HeadlineViewCell" customModule="Divent" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="72" width="375" height="329"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="UITableViewCell" rowHeight="359" id="dMo-y1-xS9" customClass="HeadlineViewCell" customModule="Divent" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="72" width="375" height="359"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dMo-y1-xS9" id="ceh-gT-da1" customClass="HeadlineViewCell" customModule="Divent" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="328.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="358.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n1C-fV-JQs">
-                                            <rect key="frame" x="36" y="46" width="269" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J0W-yP-BZg">
-                                            <rect key="frame" x="36" y="99" width="269" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8TO-jO-kyh">
-                                            <rect key="frame" x="36" y="154" width="269" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="goh-yr-9l9">
-                                            <rect key="frame" x="36" y="211" width="269" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Fr-HI-aB3">
-                                            <rect key="frame" x="36" y="269" width="269" height="28"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iDi-Pj-BYs">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iDi-Pj-BYs">
                                             <rect key="frame" x="40" y="75" width="0.0" height="0.0"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YOw-VA-n35">
-                                            <rect key="frame" x="36" y="75" width="38" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L1r-mr-NSA">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L1r-mr-NSA">
                                             <rect key="frame" x="40" y="128" width="0.0" height="0.0"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Location:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fOM-4u-nP8">
-                                            <rect key="frame" x="36" y="128" width="71" height="21"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="4Q8-Gb-dd7">
+                                            <rect key="frame" x="40" y="29" width="300" height="306"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="When:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ali-8V-1XR">
-                                            <rect key="frame" x="36" y="183" width="50" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Additional Details:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PlJ-jp-2bN">
-                                            <rect key="frame" x="36" y="240" width="138" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Activity Type:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ivi-IQ-TjE">
-                                            <rect key="frame" x="36" y="17" width="104" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HSk-r4-rc9">
-                                            <rect key="frame" x="130" y="298" width="114" height="30"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <state key="normal" title="Lookup Location"/>
-                                            <connections>
-                                                <action selector="lookupClicked:" destination="dMo-y1-xS9" eventType="touchUpInside" id="Ehu-FJ-D4e"/>
-                                            </connections>
-                                        </button>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="rWW-NY-pSh">
+                                                    <rect key="frame" x="0.0" y="0.0" width="300" height="268"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Activity Type:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ivi-IQ-TjE" customClass="DiventLabel" customModule="Divent" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="103.5" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n1C-fV-JQs" customClass="ActivityLabel" customModule="Divent" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="27.5" width="300" height="20.5"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="5hF-Sz-DH9"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YOw-VA-n35" customClass="DiventLabel" customModule="Divent" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="55" width="38" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J0W-yP-BZg" customClass="ActivityLabel" customModule="Divent" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="82.5" width="300" height="20.5"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="Vj2-7Y-xnQ"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fOM-4u-nP8" customClass="DiventLabel" customModule="Divent" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="110" width="70.5" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8TO-jO-kyh" customClass="ActivityLabel" customModule="Divent" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="137.5" width="300" height="20.5"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="sHY-ce-Iu5"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="752" text="When:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ali-8V-1XR" customClass="DiventLabel" customModule="Divent" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="165" width="49.5" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="goh-yr-9l9" customClass="ActivityLabel" customModule="Divent" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="192.5" width="300" height="20.5"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="mRN-Mi-iPs"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Additional Details:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PlJ-jp-2bN" customClass="DiventLabel" customModule="Divent" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="220" width="137.5" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Fr-HI-aB3" customClass="ActivityLabel" customModule="Divent" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="247.5" width="300" height="20.5"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="Zdv-y8-dpB"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HSk-r4-rc9" customClass="DiventButton" customModule="Divent" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="276" width="120" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="AzL-u0-aHi"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Lookup Location"/>
+                                                    <connections>
+                                                        <action selector="lookupClicked:" destination="dMo-y1-xS9" eventType="touchUpInside" id="Ehu-FJ-D4e"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </stackView>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="L1r-mr-NSA" secondAttribute="trailing" constant="20" symbolic="YES" id="2Oc-l9-3Xa"/>
+                                        <constraint firstItem="L1r-mr-NSA" firstAttribute="top" secondItem="ceh-gT-da1" secondAttribute="top" constant="128" id="4Ma-u5-W08"/>
+                                        <constraint firstItem="L1r-mr-NSA" firstAttribute="leading" secondItem="ceh-gT-da1" secondAttribute="leadingMargin" constant="24" id="DwA-y1-F52"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="iDi-Pj-BYs" secondAttribute="trailing" constant="20" symbolic="YES" id="LIz-Fk-g7L"/>
+                                        <constraint firstItem="L1r-mr-NSA" firstAttribute="leading" secondItem="iDi-Pj-BYs" secondAttribute="leading" id="Qfn-3r-mtt"/>
+                                        <constraint firstItem="iDi-Pj-BYs" firstAttribute="top" secondItem="ceh-gT-da1" secondAttribute="topMargin" constant="64" id="zak-WT-F5d"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="label1" destination="n1C-fV-JQs" id="oyX-G7-fhg"/>
@@ -345,7 +431,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VdW-Wf-c5Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="990" y="770"/>
+            <point key="canvasLocation" x="989.60000000000002" y="769.56521739130437"/>
         </scene>
         <!--Search-->
         <scene sceneID="lbq-h2-pnu">
@@ -355,9 +441,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z5l-6T-PTV">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z5l-6T-PTV">
+                                <rect key="frame" x="0.0" y="20" width="388" height="44"/>
                                 <items>
                                     <navigationItem title="Search" id="bsr-vY-Nxr">
                                         <barButtonItem key="leftBarButtonItem" title="Back" id="cIx-iW-3St">
@@ -369,31 +454,46 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Nf-OG-L0t">
-                                <rect key="frame" x="142" y="491" width="91" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Nf-OG-L0t" customClass="DiventButton" customModule="Divent" customModuleProvider="target">
+                                <rect key="frame" x="135" y="489" width="105" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="qvI-yW-j2c"/>
+                                </constraints>
                                 <state key="normal" title="Begin Search"/>
                                 <connections>
                                     <action selector="beginSearchClicked:" destination="oog-iG-wFR" eventType="touchUpInside" id="Hy2-d5-M2U"/>
                                     <segue destination="KnM-Bl-EEG" kind="show" identifier="search" id="2kX-j0-Ce8"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Activity Type:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LT2-RG-RmU">
-                                <rect key="frame" x="129" y="156" width="104" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Any" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4oh-82-W2u">
-                                <rect key="frame" x="80" y="211" width="214" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Any" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4oh-82-W2u">
+                                <rect key="frame" x="94" y="211" width="200" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="Nuk-Bt-5Ir"/>
+                                </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Activity Type:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LT2-RG-RmU" customClass="DiventLabel" customModule="Divent" customModuleProvider="target">
+                                <rect key="frame" x="142" y="156" width="104" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="OAs-0y-JZr" firstAttribute="bottom" secondItem="8Nf-OG-L0t" secondAttribute="bottom" constant="147" id="06Y-ui-yrN"/>
+                            <constraint firstItem="8Nf-OG-L0t" firstAttribute="centerX" secondItem="2lb-ST-dqP" secondAttribute="centerX" id="Cip-ff-bP4"/>
+                            <constraint firstItem="4oh-82-W2u" firstAttribute="top" secondItem="LT2-RG-RmU" secondAttribute="bottom" constant="34" id="KEq-DZ-q6c"/>
+                            <constraint firstItem="LT2-RG-RmU" firstAttribute="leading" secondItem="OAs-0y-JZr" secondAttribute="leading" constant="142" id="KjO-s9-8bV"/>
+                            <constraint firstItem="z5l-6T-PTV" firstAttribute="top" secondItem="OAs-0y-JZr" secondAttribute="top" id="Ljp-PL-RmX"/>
+                            <constraint firstItem="z5l-6T-PTV" firstAttribute="centerX" secondItem="4oh-82-W2u" secondAttribute="centerX" id="Nga-d0-vbY"/>
+                            <constraint firstItem="LT2-RG-RmU" firstAttribute="top" secondItem="z5l-6T-PTV" secondAttribute="bottom" constant="92" id="ORl-Pf-52H"/>
+                            <constraint firstItem="z5l-6T-PTV" firstAttribute="centerX" secondItem="LT2-RG-RmU" secondAttribute="centerX" id="hhD-uK-kMk"/>
+                            <constraint firstItem="z5l-6T-PTV" firstAttribute="leading" secondItem="2lb-ST-dqP" secondAttribute="leading" id="mXQ-VJ-jjJ"/>
+                            <constraint firstItem="8Nf-OG-L0t" firstAttribute="leading" secondItem="OAs-0y-JZr" secondAttribute="leading" constant="135" id="uSX-jM-ifa"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="OAs-0y-JZr"/>
                     </view>
                     <toolbarItems/>

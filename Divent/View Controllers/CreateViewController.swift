@@ -11,7 +11,7 @@ import Firebase
 import CoreLocation
 import MapKit
 
-class CreateViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate{
+class CreateViewController: DiventViewController, UIPickerViewDataSource, UIPickerViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate{
     
 
     
@@ -140,7 +140,7 @@ class CreateViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
        
         self.present(dialogMessage, animated: true, completion: nil)
     }
-    
+
     func confirmRecord()
     {
 
@@ -184,6 +184,8 @@ class CreateViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        moreDetails.isScrollEnabled = false
         self.ref = Database.database().reference()
         self.registerForFireBaseUpdates()
         activityPicker.delegate = self

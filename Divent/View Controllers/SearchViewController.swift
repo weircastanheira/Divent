@@ -10,7 +10,7 @@ import UIKit
 import CoreLocation
 import MapKit
 
-class SearchViewController:UIViewController,UIPickerViewDataSource,UIPickerViewDelegate  {
+class SearchViewController:DiventViewController,UIPickerViewDataSource,UIPickerViewDelegate  {
 
     
     @IBOutlet weak var mileSliderValue: UILabel!
@@ -82,6 +82,7 @@ class SearchViewController:UIViewController,UIPickerViewDataSource,UIPickerViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        UIApplication.shared.keyWindow?.windowLevel = UIWindow.Level.normal
         activityPicker.delegate = self
         createActivityPicker()
         

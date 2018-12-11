@@ -88,7 +88,7 @@ class ActivityTableViewController: UITableViewController{
         cell.label3?.text = test.locationTF
         cell.label4?.text = test.datePickerTF
         cell.label5?.text = test.moreDetails
- //       cell.contentView.backgroundColor = UIColor.blue
+        cell.contentView.backgroundColor = BACKGROUND_COLOR
 
         
         if(test.activityPickerTF == activityTypeData || activityTypeData == "Any"){
@@ -99,9 +99,6 @@ class ActivityTableViewController: UITableViewController{
             entries.remove(at: indexPath.row)
             self.tableView.reloadData()
         }
-                
-        
-            
         
         return cell
 
@@ -114,10 +111,10 @@ class ActivityTableViewController: UITableViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        UIApplication.shared.keyWindow?.windowLevel = UIWindow.Level.statusBar
+        self.tableView.backgroundColor = BACKGROUND_COLOR
+        self.tableView.allowsSelection = false
         
-
-        
-        self.tableView.backgroundColor = UIColor.blue
 
         self.tableView.delegate = self
         self.tableView.dataSource = self
@@ -125,6 +122,10 @@ class ActivityTableViewController: UITableViewController{
  
         LoadCalls()
 
+    }
+    
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return UIInterfaceOrientationMask.portrait
     }
     
     func LoadCalls() {

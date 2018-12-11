@@ -20,6 +20,10 @@
 		BF6DDBD821A8A851002A8F21 /* DiventUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6DDBD721A8A851002A8F21 /* DiventUITests.swift */; };
 		BF6DDBEA21A8B44D002A8F21 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6DDBE921A8B44D002A8F21 /* SearchViewController.swift */; };
 		BF6DDBEC21A8B46C002A8F21 /* CreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6DDBEB21A8B46C002A8F21 /* CreateViewController.swift */; };
+		BFC7C78721BF0CBA002F36FB /* DiventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC7C78621BF0CBA002F36FB /* DiventViewController.swift */; };
+		BFC7C78921BF0F6C002F36FB /* DiventLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC7C78821BF0F6C002F36FB /* DiventLabel.swift */; };
+		BFC7C78B21BF0FB7002F36FB /* DiventButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC7C78A21BF0FB7002F36FB /* DiventButton.swift */; };
+		BFC7C78D21BF1763002F36FB /* ActivityLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC7C78C21BF1763002F36FB /* ActivityLabel.swift */; };
 		BFE9EDDC21BDDB2400C6E178 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BFE9EDDB21BDDB2400C6E178 /* Default-568h@2x.png */; };
 		BFEA8B1821BCA68A008F7003 /* dataArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEA8B1721BCA68A008F7003 /* dataArray.swift */; };
 		BFEA8B2621BCC775008F7003 /* ActivityTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEA8B2521BCC775008F7003 /* ActivityTableViewController.swift */; };
@@ -68,6 +72,10 @@
 		BF6DDBE921A8B44D002A8F21 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		BF6DDBEB21A8B46C002A8F21 /* CreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateViewController.swift; sourceTree = "<group>"; };
 		BFC5EB762099B4ECF4635596 /* Pods-DiventUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DiventUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DiventUITests/Pods-DiventUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		BFC7C78621BF0CBA002F36FB /* DiventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiventViewController.swift; sourceTree = "<group>"; };
+		BFC7C78821BF0F6C002F36FB /* DiventLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiventLabel.swift; sourceTree = "<group>"; };
+		BFC7C78A21BF0FB7002F36FB /* DiventButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiventButton.swift; sourceTree = "<group>"; };
+		BFC7C78C21BF1763002F36FB /* ActivityLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityLabel.swift; sourceTree = "<group>"; };
 		BFE9EDDB21BDDB2400C6E178 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		BFEA8B1721BCA68A008F7003 /* dataArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = dataArray.swift; path = /Users/macosuser/Documents/DiventProject/Divent/dataArray.swift; sourceTree = "<absolute>"; };
 		BFEA8B2521BCC775008F7003 /* ActivityTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTableViewController.swift; sourceTree = "<group>"; };
@@ -140,6 +148,9 @@
 			isa = PBXGroup;
 			children = (
 				499AB3F221B7289F00BAB38A /* d.png */,
+				BFC7C78A21BF0FB7002F36FB /* DiventButton.swift */,
+				BFC7C78C21BF1763002F36FB /* ActivityLabel.swift */,
+				BFC7C78821BF0F6C002F36FB /* DiventLabel.swift */,
 				BF6DDBED21A8B4D0002A8F21 /* View Controllers */,
 				BF6DDBB721A8A84F002A8F21 /* AppDelegate.swift */,
 				BFEA8B1721BCA68A008F7003 /* dataArray.swift */,
@@ -175,6 +186,7 @@
 			children = (
 				BF6DDBB921A8A84F002A8F21 /* ViewController.swift */,
 				BF6DDBEB21A8B46C002A8F21 /* CreateViewController.swift */,
+				BFC7C78621BF0CBA002F36FB /* DiventViewController.swift */,
 				BF6DDBE921A8B44D002A8F21 /* SearchViewController.swift */,
 				BFEA8B2521BCC775008F7003 /* ActivityTableViewController.swift */,
 			);
@@ -431,8 +443,12 @@
 				BF6DDBEA21A8B44D002A8F21 /* SearchViewController.swift in Sources */,
 				BFEA8B2621BCC775008F7003 /* ActivityTableViewController.swift in Sources */,
 				BF6DDBBA21A8A84F002A8F21 /* ViewController.swift in Sources */,
+				BFC7C78B21BF0FB7002F36FB /* DiventButton.swift in Sources */,
 				BFEA8B1821BCA68A008F7003 /* dataArray.swift in Sources */,
 				BF6DDBB821A8A84F002A8F21 /* AppDelegate.swift in Sources */,
+				BFC7C78D21BF1763002F36FB /* ActivityLabel.swift in Sources */,
+				BFC7C78921BF0F6C002F36FB /* DiventLabel.swift in Sources */,
+				BFC7C78721BF0CBA002F36FB /* DiventViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
